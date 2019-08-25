@@ -78,7 +78,6 @@ Since the Yelp dataset [here](https://www.yelp.com/dataset/download) is not stat
 
 * business.json
 * checkin.json
-* photos.json
 * review.json
 * tip.json
 * user.json
@@ -96,8 +95,8 @@ Alternatively, download a version of this dataset from another source & set it u
 ```
 mkdir -p dataset/yelp/processed/style_transfer
 cd dataset/yelp/processed/style_transfer
-wget http://tts.speech.cs.cmu.edu/style_models/multi_attribute.tar
-tar -xvf multi_attribute.tar
+wget http://tts.speech.cs.cmu.edu/style_models/yelp_reviews.txt
+wget http://tts.speech.cs.cmu.edu/style_models/yelp_attrs.txt
 mv yelp_attrs.txt fader.attr
 mv yelp_reviews.txt fader.review
 cd ../../../../Yelp/
@@ -136,9 +135,9 @@ NOTE: This dataset is an order of magnitude larger than Yelp and will take prett
 To run setup,
 
 ```
-$ cd Amazon
-$ mkdir -p ../dataset/amazon
-$ bash amazon_pipeline.sh
+cd Amazon
+mkdir -p ../dataset/amazon
+bash amazon_pipeline.sh
 ```
 
 This should write the automatic train/val/test splits to
