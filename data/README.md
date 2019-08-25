@@ -100,7 +100,6 @@ wget http://tts.speech.cs.cmu.edu/style_models/multi_attribute.tar
 tar -xvf multi_attribute.tar
 mv yelp_attrs.txt fader.attr
 mv yelp_reviews.txt fader.review
-rm multi_attribute.tar
 cd ../../../../Yelp/
 bash yelp_short_pipeline.sh
 ```
