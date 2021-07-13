@@ -154,14 +154,14 @@ done
 
 mkdir -p $FINAL_DATA_PATH/split
 cut -f1 $FINAL_DATA_PATH/train.fader.80000 | sed -r 's/(@@ )|(@@ ?$)//g' | split -l 1000000 - $FINAL_DATA_PATH/split/
-for FILENAME in aa ab ac ad ae af; do
+for FILENAME in aa ab ac ad ae af ag ah ai; do
     $FASTTEXT predict $CAT_CLF_PATH $FINAL_DATA_PATH/split/$FILENAME \
     | sed 's/^__label__//' > $FINAL_DATA_PATH/split/$FILENAME.categories &
 done
 
 wait
 
-cat $FINAL_DATA_PATH/split/aa.categories $FINAL_DATA_PATH/split/ab.categories $FINAL_DATA_PATH/split/ac.categories $FINAL_DATA_PATH/split/ad.categories $FINAL_DATA_PATH/split/ae.categories $FINAL_DATA_PATH/split/af.categories > $FINAL_DATA_PATH/train.categories
+cat $FINAL_DATA_PATH/split/aa.categories $FINAL_DATA_PATH/split/ab.categories $FINAL_DATA_PATH/split/ac.categories $FINAL_DATA_PATH/split/ad.categories $FINAL_DATA_PATH/split/ae.categories $FINAL_DATA_PATH/split/af.categories $FINAL_DATA_PATH/split/ag.categories $FINAL_DATA_PATH/split/ah.categories $FINAL_DATA_PATH/split/ai.categories > $FINAL_DATA_PATH/train.categories
 
 # Add labels
 for NAME in train valid test; do

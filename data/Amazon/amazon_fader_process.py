@@ -13,8 +13,6 @@ There are 2 files
 1. All of the reviews (with nothing thrown away)
 2. Metadata associated with each review Gender / Sentiment / Product Category
 
-See: /prviate/home/subramas/Data/amazon_tmp/processed/style_transfer/fader/README
-
 Requires:
 
 1. --gender_folder    - A folder that contains files names.male and names.female
